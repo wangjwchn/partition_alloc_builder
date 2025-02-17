@@ -26,15 +26,19 @@ vars = {
 }
 
 deps = {
+  # https://chromium.googlesource.com/chromium/src/base/allocator/partition_allocator/+/f519950b1da2ff90149fb66cc80aef17ee4f846a
   'partition_alloc_builder/base/allocator/partition_allocator':
       Var('chromium_git') +
-      '/chromium/src/base/allocator/partition_allocator.git',
+      '/chromium/src/base/allocator/partition_allocator.git@f519950b1da2ff90149fb66cc80aef17ee4f846a',
+  # https://chromium.googlesource.com/chromium/src/build/+/a9b942d006818e3ce789916349343a69e25f5f7c
   'partition_alloc_builder/build':
-      Var('chromium_git') + '/chromium/src/build.git',
+      Var('chromium_git') + '/chromium/src/build.git@a9b942d006818e3ce789916349343a69e25f5f7c',
+  # https://chromium.googlesource.com/chromium/src/build_overrides/+/9c6898f34730d9bd141a14149d498d77f387242a
   'partition_alloc_builder/build_overrides':
-      Var('chromium_git') + '/chromium/src/build_overrides.git',
+      Var('chromium_git') + '/chromium/src/build_overrides.git@9c6898f34730d9bd141a14149d498d77f387242a',
   'partition_alloc_builder/buildtools':
-      Var('chromium_git') + '/chromium/src/buildtools.git',
+  # https://chromium.googlesource.com/chromium/src/buildtools/+/5d2ccbf93c7d956a9aff1d0acd21155e6b515ceb
+      Var('chromium_git') + '/chromium/src/buildtools.git@5d2ccbf93c7d956a9aff1d0acd21155e6b515ceb',
   'partition_alloc_builder/buildtools/clang_format/script':
       Var('chromium_git') +
       '/external/github.com/llvm/llvm-project/clang/tools/clang-format.git',
@@ -68,13 +72,16 @@ deps = {
     'dep_type': 'cipd',
     'condition': 'host_os == "win"',
   },
+    # https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxx/+/3f3f7532e900f6703eaca3c1f6ea99542b6e2501
   'partition_alloc_builder/buildtools/third_party/libc++/trunk':
-      Var('chromium_git') + '/external/github.com/llvm/llvm-project/libcxx.git',
+      Var('chromium_git') + '/external/github.com/llvm/llvm-project/libcxx.git@3f3f7532e900f6703eaca3c1f6ea99542b6e2501',
+  # https://chromium.googlesource.com/external/github.com/llvm/llvm-project/libcxxabi/+/1a32724f721e1c3b6c590a07fe4a954344f15e48
   'partition_alloc_builder/buildtools/third_party/libc++abi/trunk':
       Var('chromium_git') +
-      '/external/github.com/llvm/llvm-project/libcxxabi.git',
+      '/external/github.com/llvm/llvm-project/libcxxabi.git@1a32724f721e1c3b6c590a07fe4a954344f15e48',
+  # https://chromium.googlesource.com/chromium/src/tools/clang/+/75ced899f080bc079060394dc93dbffba55383da
   'partition_alloc_builder/tools/clang':
-      Var('chromium_git') + '/chromium/src/tools/clang.git',
+      Var('chromium_git') + '/chromium/src/tools/clang.git@75ced899f080bc079060394dc93dbffba55383da',
   'partition_alloc_builder/testing':
       Var('chromium_git') + '/chromium/src/testing.git',
   'partition_alloc_builder/third_party/googletest/src':
